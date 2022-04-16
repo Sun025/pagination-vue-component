@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+}
+.pagination .item {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.pagination .item:not(:last-child) {
+  margin-right: 10px;
+}
+.pagination .hide {
+  display: none;
+}
+.pagination .active {
+  color: red;
+}
+.pagination .disabled {
+  pointer-events: none;
+  color: #f8f8f8;
+  border: 1px solid #000000;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: grid;
+  place-items: center;
+}
