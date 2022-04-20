@@ -66,7 +66,7 @@ export default {
       },
       currentPage: {
           type: Number,
-          default: 6
+          default: 1
       },
       continues: {
           type: Number,
@@ -136,15 +136,6 @@ export default {
 .total-text {
     margin-right: 16px;
 }
-button {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    margin-right: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
 .ellipsis {
     margin-right: 16px;
 }
@@ -154,5 +145,14 @@ button {
 }
 .disbled {
     cursor: not-allowed;
+}
+button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    margin-right: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 </style>
