@@ -1,4 +1,4 @@
-# Pagination
+# pagination-vue-component
 
 一个Vue的分页组件（pagination-vue-component)
 
