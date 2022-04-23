@@ -53,6 +53,7 @@ export default {
   data() {
     return {
       title: "Pagination",
+      currentPage: 1
     };
   },
   props: {
@@ -63,10 +64,6 @@ export default {
       pageSize: {
           type: Number,
           default: 12
-      },
-      currentPage: {
-          type: Number,
-          default: 1
       },
       continues: {
           type: Number,
@@ -117,12 +114,18 @@ export default {
   methods: {
       onLastPage() {
           this.currentPage = this.currentPage - 1;
+          this.onEmitCurrenPage();
       },
       onNextPage() {
           this.currentPage = this.currentPage + 1;
+          this.onEmitCurrenPage();
       },
       onChangePage(pageNum) {
           this.currentPage = pageNum;
+          this.onEmitCurrenPage();
+      },
+      onEmitCurrenPage() {
+        this.$emit('on-page-change', this.currentPage);
       }
   }
 };
@@ -136,6 +139,15 @@ export default {
 .total-text {
     margin-right: 16px;
 }
+button {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    margin-right: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 .ellipsis {
     margin-right: 16px;
 }
@@ -145,14 +157,5 @@ export default {
 }
 .disbled {
     cursor: not-allowed;
-}
-button {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    margin-right: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 </style>
