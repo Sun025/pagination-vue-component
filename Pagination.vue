@@ -21,9 +21,9 @@
       </svg>
     </button>
     <button type="button" :class="{'active': currentPage == 1}" v-if="currentPage > parseInt(continues / 2) + 1" @click="onChangePage(1)">1</button>
-    <span class="ellipsis" v-if="currentPage > parseInt(continues / 2) + 1">...</span>
+    <span class="ellipsis" v-if="currentPage > parseInt(continues / 2) + 1 && totalPage > continues + 1">...</span>
     <button type="button" :class="{'active': currentPage == item}" v-for="item in middleArrayList" :key="item" @click="onChangePage(item)">{{ item }}</button>
-    <span class="ellipsis" v-if="currentPage <= totalPage - (parseInt(continues / 2) + 1)">...</span>
+    <span class="ellipsis" v-if="currentPage <= totalPage - (parseInt(continues / 2) + 1) && totalPage > continues + 1">...</span>
     <button type="button" v-if="currentPage < totalPage - parseInt(continues / 2)" @click="onChangePage(totalPage)">{{ totalPage }}</button>
     <button type="button" class="arrow" :class="{'disbled': currentPage == totalPage}" :disabled="currentPage == totalPage" @click="onNextPage">
       <svg
